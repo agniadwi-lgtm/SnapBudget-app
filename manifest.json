@@ -1,0 +1,20 @@
+{
+  "name": "SnapBudget",
+  "short_name": "SnapBudget",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff69b4",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/agniadwi-lgtm/SnapBudget-app/main/logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/agniadwi-lgtm/SnapBudget-app/main/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
