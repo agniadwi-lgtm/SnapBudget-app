@@ -25,6 +25,19 @@ def pasang_ikon_hp(file_logo):
                     head.appendChild(link);
                 }});
 
+                const manifest = {{
+                    name: "SnapBudget",
+                    short_name: "SnapBudget",
+                    start_url: window.parent.location.href,
+                    display: "standalone",
+                    icons: [{{ src: iconUrl, sizes: "512x512", type: "image/jpeg" }}]
+                }};
+                const blob = new Blob([JSON.stringify(manifest)], {{type: 'application/json'}});
+                const manifestLink = window.parent.document.createElement('link');
+                manifestLink.rel = 'manifest';
+                manifestLink.href = URL.createObjectURL(blob);
+                head.appendChild(manifestLink);
+
                 window.parent.document.title = "SnapBudget";
             </script>
             """,
@@ -100,9 +113,7 @@ if st.button("Cek Anggaran & Lihat Grafik", type="primary"):
       )
       with open(path_struk, "wb") as f:
         f.write(foto_struk.getbuffer())
-      st.image(
-          foto_struk, caption=f"Tersimpan di: {path_struk}", width=250
-      )
+      st.image(foto_struk, caption=f"Tersimpan di: {path_struk}", width=250)
 
     warna = [
         "crimson" if n > batas_per_kategori else "hotpink" for n in nominal
